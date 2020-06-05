@@ -5,11 +5,10 @@ class Solution:
         diag_used = [False]*(2*n-1)
         diag_used_2 = [False]*(2*n-1)
         vertical = [False]*(2*n-1)
-        board = ["."*n]*n
-        self.dfs(0,board,n,diag_used,diag_used_2,vertical)
+        self.dfs(0,n,diag_used,diag_used_2,vertical)
         return self.res
     
-    def dfs(self,x,board,n,diag_used,diag_used_2,vertical):
+    def dfs(self,x,n,diag_used,diag_used_2,vertical):
         if x == n:
             self.res+=1
             return
@@ -18,19 +17,14 @@ class Solution:
             d2 = x-y+n-1
             if diag_used[d1] or diag_used_2[d2] or vertical[y]:
                 continue
-        
-            prev = board[x]
-            board[x] = board[x][:y] + "Q"+board[x][y+1:]
             diag_used[d1] =True
             diag_used_2[d2] = True
             vertical[y] = True
-            self.dfs(x+1,board,n,diag_used,diag_used_2,vertical)
-            board[x] = prev
+            self.dfs(x+1,n,diag_used,diag_used_2,vertical)
             diag_used[d1] =False
             diag_used_2[d2] = False
             vertical[y] = False
-            
-        return
+        return 
 class Solution2:
     def totalNQueens(self, n: int) -> int:
         res = []
