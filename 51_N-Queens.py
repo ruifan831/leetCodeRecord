@@ -15,6 +15,8 @@ class Solution:
         for y in range(n):
             d1 = x+y
             d2 = x-y+n-1
+            # check current (x,y) position if there is Queen alreay placed on diagnal lines or vertical lines
+            # if so, skip to next position.
             if diag_used[d1] or diag_used_2[d2] or vertical[y]:
                 continue
         
