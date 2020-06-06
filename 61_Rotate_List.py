@@ -19,6 +19,7 @@ class Solution:
             length+=1
         k = k%length
         head= node.next
+        # only rotate the list for one step, and keep rotate until k is equal to 0.
         while k>0:
             node = changing = ListNode()
             node.next = head
