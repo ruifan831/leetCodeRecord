@@ -8,7 +8,7 @@ class Solution:
         if head is None:
             return head
         # k might greater than length of head.
-        # it is a waste to keep rotate the head if the linked list has been rotated for a round.
+        # it is a waste to keep rotate the head if the linked list has been rotated for a full round.
         # so we wanna tinker k so that we dont need to rotate over and over, but the result is still the same.
         # Since we know every length of head times, the linked list is restore to the original list.
         # Hence we change K to K%(length of head)
