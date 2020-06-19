@@ -1,2 +1,2 @@
 # leetCodeRecord
-Resolution for LeetCode Porblem in Python
+Solution for LeetCode Porblem in Python with explanation.
