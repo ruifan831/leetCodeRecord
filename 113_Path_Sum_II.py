@@ -26,18 +26,15 @@ class Solution {
     
     private void dfs(TreeNode node,int target, Stack<Integer> path){
         path.push(node.val);
-        if (node.left== null && node.right==null){
-            if (target==node.val){
-                res.add(new ArrayList<Integer>(path));
+        if (node.left == null && node.right == null){
+            if (target == node.val){
+                res.add(new ArrayList(path));
             }
-        }
-        
-        if (node.left != null){
-            dfs(node.left,target-node.val,path);
-        }
-        if (node.right != null){
-            dfs(node.right,target-node.val,path);
-        }
+        } else{
+           if (node.left != null) dfs(node.left,target-node.val,path);
+           if (node.right !=null) dfs(node.right,target-node.val,path);
+           
+       }
         path.pop();
     }
     
