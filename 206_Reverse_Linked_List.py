@@ -12,5 +12,3 @@ class Solution:
             prev=head
             head=nextNode
         return prev
-            
-            
